@@ -1,0 +1,48 @@
+Chlef, 124000, 11, 12, 1, 2
+Laghouat, 0, none, none
+Bejaia, 0, none, none
+Bechar, 0, none, none
+Blida, 1113500, 11, 12, 1, 2, 3
+Bouira, 0, none, none
+Tamanrasset, 0, none, none
+Tlemcen, 0, none, none
+Tizi Ouzou, 30000, 11, 12, 1, 2, 3
+Alger, 414000, 11, 12, 1, 2, 3
+Jijel, 0, none, none
+Skikda, 10000, 11, 12, 1, 2
+Annaba, 0, none, none
+Guelma, 0, none, none
+Constantine, 0, none, none
+Medea, 0, none, none
+Mostaganem, 0, none, none
+Mascara, 0, none, none
+Ouargla, 0, none, none
+Oran, 0, none, none
+Illizi, 0, none, none
+Bordj Bou Arreridj, 0, none, none
+Boumerdes, 0, none, none
+El Tarf, 0, none, none
+El Oued, 0, none, none
+Souk Ahras, 0, none, none
+Tipaza, 0, none, none
+Mila, 0, none, none
+Ain Defla, 0, none, none
+Naama, 0, none, none
+Ain Temouchent, 0, none, none
+Ghardaia, 0, none, none
+Relizane, 0, none, none
+Adrar, 0, none, none
+Khenchela, 0, none, none
+Tissemsilt, 0, none, none
+Tindouf, 0, none, none
+El Beyadh, 0, none, none
+M'sila, 0, none, none
+Saida, 0, none, none
+Setif, 0, none, none
+Djelfa, 0, none, none
+Tiaret, 0, none, none
+Tebessa, 0, none, none
+Batna, 0, none, none
+Oum El Bouaghi, 0, none, none
+Biskra, 0, none, none
+Sidi Bel Abbes, 0, none, none

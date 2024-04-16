@@ -1,0 +1,58 @@
+Adrar, 93456200, 10, 11, 12
+Chlef, 0, none,  none, none
+Laghouat, 1320700, 10, 11, 12
+Oum El Bouaghi, 0, none, none, none
+Batna, 1674300, 10, 11, 12
+Bejaia, 0, none, none, none
+Biskra, 472300000, 10, 11, 12
+Bechar, 39813000, 10, 11, 12
+Blida, 0, none, none, none
+Bouira, 0, none, none, none
+Tamanrasset, 10518100, 10, 11, 12
+Tebessa, 1990000, 10, 11, 12
+Tlemcen, 0, none, none, none
+Tiaret, 0, none, none, none
+Tizi Ouzou, 0, none, none, none
+Alger, 1321000, 10, 11, 12
+Djelfa, 0, none, none, none
+Jijel, 0, none, none, none
+Setif, 0, none, none, none
+Saida, 0, none, none, none
+Skikda, 0, none, none, none
+Sidi Bel Abbes, 0, none, none, none
+Annaba, 0, none, none, none
+Guelma, 0, none, none, none
+Constantine, 165016400, 10, 11, 12
+Medea, 0, none, none, none
+Mostaganem, 1015500, 10, 11, 12
+M'Sila, 1819200, 10, 11, 12
+Mascara, 0, none, none, none
+Ouargla, 0, none, none, none
+Oran, 0, none, none, none
+El Bayadh, 0, none, none, none
+Illizi, 0, none, none, none
+Bordj Bou Arreridj, 0, none, none, none
+Boumerdes, 0, none, none, none
+El Tarf, 0, none, none, none
+Tindouf, 0, none, none, none
+Tissemsilt, 0, none, none, none
+El Oued, 650500, 10, 11, 12
+Khenchela, 0, none, none, none
+Souk Ahras, 60400000, 10, 11, 12
+Tipaza, 0, none, none, none
+Mila, 0, none, none, none
+In Defla, 0, none, none, none
+Naama, 0, none, none, none
+In Temouchent, 0, none, none, none
+Ghardaia, 0, none, none, none
+Relizane, 0, none, none, none
+Timimoun, 0, none, none
+Bordj Badji Mokhtar, 0, none, none
+Ouled Djellal, 0, none, none
+Beni Abbes, 0, none, none
+In Salah, 0, none, none
+In Guezzam, 0, none ,none
+Touggourt, 0, none, none
+Djanet, 0, none, none
+El M'Ghair, 0, none, none
+El Meniaa, 0, none, none

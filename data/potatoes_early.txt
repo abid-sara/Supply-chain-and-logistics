@@ -1,0 +1,58 @@
+Adrar, 8020400, 3, 4
+Chlef, 0, none, none
+Laghouat, 0, none, none
+Oum El Bouaghi, 0, none, none
+Batna, 0, none, none
+Bejaia, 597000, 3, 4
+Biskra, 3420000, 3, 4
+Bechar, 0, none, none
+Blida, 0, none, none
+Bouira, 0, none, none
+Tamanrasset, 0, none, none
+Tebessa, 0, none, none
+Tlemcen, 2210000, 3, 4
+Tiaret, 0, none, none
+Tizi Ouzou, 2111500, 3, 4
+Alger, 10192000, 3, 4
+Djelfa, 0, none, none
+Jijel, 4681600, 3, 4
+Setif, 0, none, none
+Saida, 0, none, none
+Skikda, 22870000, 3, 4
+Sidi Bel Abbes, 0, none, none
+Annaba, 1075000, 3, 4
+Guelma, 0, none, none
+Constantine, 20525000, 3, 4
+Medea, 0, none, none
+Mostaganem, 0, none, none
+M'Sila, 105000, 3, 4
+Mascara, 196300, 3, 4
+Ouargla, 0, none, none
+Oran, 41700, 3, 4
+El Bayadh, 0, none, none
+Illizi, 21746000, 3, 4
+Bordj Bou Arreridj, 2695000, 3, 4
+Boumerdes, 0, none, none
+El Tarf, 0, none, none
+Tindouf, 0, none, none
+Tissemsilt, 0, none, none
+El Oued, 0, none, none
+Khenchela, 18168400, 3, 4
+Souk Ahras, 0, none, none
+Tipaza, 0, none, none
+Mila, 910000, 3, 4
+In Defla, 0, none, none
+Naama, 0, none, none
+In Temouchent, 0, none, none
+Ghardaia, 0, none, none
+Relizane, 0, none, none
+Timimoun, 0, none, none
+Bordj Badji Mokhtar, 0, none, none
+Ouled Djellal, 0, none, none
+Beni Abbes, 0, none, none
+In Salah, 0, none, none
+In Guezzam, 0, none ,none
+Touggourt, 0, none, none
+Djanet, 0, none, none
+El M'Ghair, 0, none, none
+El Meniaa, 0, none, none

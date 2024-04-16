@@ -1,0 +1,58 @@
+Adrar, 0, 11, 12, 1
+Chlef, 72226000, 11, 12, 1
+Laghouat, 82010000, 11, 12, 1
+Oum El Bouaghi, 3230000, 11, 12, 1
+Batna, 28264500, 11, 12, 1
+Bejaia, 26375000, 11, 12, 1
+Biskra, 0, 11, 12, 1
+Bechar, 19400000, 11, 12, 1
+Blida, 275220000, 11, 12, 1
+Bouira, 1101510000, 11, 12, 1
+Tamanrasset, 3132000, 11, 12, 1
+Tebessa, 159830000, 11, 12, 1
+Tlemcen, 116700000, 11, 12, 1
+Tiaret, 201094200, 11, 12, 1
+Tizi Ouzou, 11204500, 11, 12, 1
+Alger, 29403000, 11, 12, 1
+Djelfa, 102980000, 11, 12, 1
+Jijel, 13219100, 11, 12, 1
+Setif, 39845100, 11, 12, 1
+Saida, 93231000, 11, 12, 1
+Skikda, 113811000, 11, 12, 1
+Sidi Bel Abbes, 51536700, 11, 12, 1
+Annaba, 11989500, 11, 12, 1
+Guelma, 4307500, 11, 12, 1
+Constantine, 1205000, 11, 12, 1
+Medea, 38441000, 11, 12, 1
+Mostaganem, 410236000, 11, 12, 1
+M'Sila, 15940000, 11, 12, 1
+Mascara, 236040000, 11, 12, 1
+Ouargla, 15950000, 11, 12, 1
+Oran, 3529000, 11, 12, 1
+El Bayadh, 38996000, 11, 12, 1
+Illizi, 0, 11, 12, 1
+Bordj Bou Arreridj, 16175000, 11, 12, 1
+Boumerdes, 48164700, 11, 12, 1
+El Tarf, 15265000, 11, 12, 1
+Tindouf, 0, 11, 12, 1
+Tissemsilt, 3690500, 11, 12, 1
+El Oued, 3500000000, 11, 12, 1
+Khenchela, 2060000, 11, 12, 1
+Souk Ahras, 3942000, 11, 12, 1
+Tipaza, 17441900, 11, 12, 1
+Mila, 39705000, 11, 12, 1
+In Defla, 361490000, 11, 12, 1
+Naama, 4904000, 11, 12, 1
+In Temouchent, 4324500, 11, 12, 1
+Ghardaia, 0, 11, 12, 1
+Relizane, 35966000, 11, 12, 1
+Timimoun, 0, none, none
+Bordj Badji Mokhtar, 0, none, none
+Ouled Djellal, 0, none, none
+Beni Abbes, 0, none, none
+In Salah, 0, none, none
+In Guezzam, 0, none ,none
+Touggourt, 0, none, none
+Djanet, 0, none, none
+El M'Ghair, 0, none, none
+El Meniaa, 0, none, none
