@@ -149,7 +149,6 @@ companies = problemLogistic.find_company("tomato", "52384000")
 # A star
 '''
 solution = a_star(problemLogistic, cities, companies)
-counter = 0
 print("solution:")
 for e in solution:
     print(e)
@@ -171,25 +170,6 @@ print("------------------------------------"*4)
 '''
 '''
 # Uniform Cost Search
-for initial_state in cities:
-    solution, total_cost = ucs(state_transition_model, initial_state, target_city)
-    if solution:
-        print(f"\nSolution starting from city: {initial_state}")
-        cumulative_cost = 0  # Initialize cumulative cost
-        for i, (node, cost) in enumerate(solution):
-            cumulative_cost += cost  # Update cumulative cost
-            if i == 0:
-                print(f"{node} ({cost:.1f})", end="")
-            else:
-                print(f" -> {node} ({cumulative_cost:.1f})", end="")
-                
-        print()
-        print(f"Cost of solution is {total_cost:.1f}")
-        print(f"Depth of goal node: {len(solution) - 1}")
-    else:
-        print(f"No solution found starting from city: {initial_state}")
-'''
-
 solutions = ucs(problemLogistic, cities)
 
 if solutions:
