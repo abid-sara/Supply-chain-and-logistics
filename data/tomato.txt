@@ -19,7 +19,7 @@ Mascara, 8660000, 4, 5
 Ouargla, 5105700, 4, 5, 6
 Oran, 6984200, 6, 7, 8
 Illizi, 176600, 4, 5, 6
-Bordj Bou Arreridj, 1993500, july, august
+Bordj Bou Arreridj, 1993500, 7, 8
 Boumerdes, 26641200, 6, 7, 8
 El Tarf, 0, none, none
 El Oued, 239800000, 6, 7, 8
