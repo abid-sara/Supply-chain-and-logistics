@@ -159,9 +159,10 @@ class TransportProblem:
                                 "number of trucks needed": 0,
                                 "eligible": False  # temporary attribute used to check if the company is an eligible
                             }
-
+                
+                
                 for company in companies:
-                    print(company)
+                    #print(company)
                     num_of_available_capacities = len(companies[company]["capacities"])
                     quantity_left = quantity_in_tonne
                     num_of_trucks_needed = 0
@@ -189,21 +190,33 @@ class TransportProblem:
 
                     if quantity_left > 0:
                         companies[company]["eligible"] = False
-
+                    
+                # keep only the companies that are able to transport the product
+                companies = {company: data for company, data in companies.items() if data["eligible"]}
+                
+                wilaya_company = {}    
+                for company in companies:
+                    wilaya = companies[company]["wilaya"]
+                    num_of_trucks_needed = int(companies[company]["number of trucks needed"])
+                    if wilaya in wilaya_company:
+                        min_trucks_needed = int(wilaya_company[wilaya]["min trucks needed"])
+                        if num_of_trucks_needed <= min_trucks_needed:
+                            wilaya_company[wilaya] = {"company": company, "min trucks needed": num_of_trucks_needed}
+                    else:
+                        wilaya_company[wilaya] = {"company": company, "min trucks needed": num_of_trucks_needed}
+                
             else:
                 print("No transportation needed.")
 
-            # keep only the companies that are able to transport the product
-            companies = {company: data for company, data in companies.items() if data["eligible"]}
             # Remove the "eligible" attribute from each company's data
-            for company in companies.values():
-                del company["eligible"]
+            for wilaya in wilaya_company.values():
+                del wilaya["min trucks needed"]
 
-            print("Companies:")
-            for company, city in companies.items():
-                print(f"Company: {company}, Info: {city}")
+            # print("Companies:")
+            # for company, city in companies.items():
+            #     print(f"Company: {company}, Info: {city}")
 
-        return companies
+        return wilaya_company
 
     # informed strategy related  functions
     def get_cowl_flew_distance(self, city_name, goal_city_name):
