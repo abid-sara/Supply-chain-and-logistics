@@ -17,8 +17,6 @@ def find_optimal_company_solution(problem, companies, search_strategy):
     """
     #get only the wilayas
     wilayas = list(companies.keys())
-    print("WILAYASSSSS:")
-    print(wilayas)
     solution = None #the solution path 
     #get the solution path based on the search strategy given
     if search_strategy == "BFS":
