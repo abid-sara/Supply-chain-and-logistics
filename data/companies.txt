@@ -1,0 +1,44 @@
+GLOBAL BBS, Alger, 100, 25T, all
+Optimalogistic, Alger, 5, 1T, all
+Optimalogistic, Alger, 5, 3T, all
+Optimalogistic, Alger, 5, 5T, all
+Optimalogistic, Alger, 15, 10T, all
+Optimalogistic, Alger, 20, 25T, all
+TRANSITAIRE Algérie, Alger, 30, 20T, all
+DKL LIVRAISON, Alger, 30, 20T, all
+SARL TRANSPORT BAF, Blida, 35, 20T, all
+BHS DELIVERY, Boumerdes, 16, 5T, all
+BHS DELIVERY, Boumerdes, 4, 10T, all
+BHS DELIVERY, Boumerdes, 3, 12T, all
+BHS DELIVERY, Boumerdes, 3, 13T, all
+BHS DELIVERY, Boumerdes, 7, 20T, all
+SARL ARABEX, Annaba, 10, 25T, potato
+SARL BM IMPORT EXPORT, Tizi Ouzou, 5, 20T, all
+SARL GRCOM, Tlemcen, 50, 15T, lemon & orange
+HAMIMOUR EXPORT FRUITS ET LÉGUMES D'ALGÉRIE (HEFLA), Mila, 10, 20T, all
+SARL 2M SILVERSTON DEVELOPMENT CO, Biskra, 7, 10T, date
+SARL 2M SILVERSTON DEVELOPMENT CO, Biskra, 12, 15T, date
+EXPLOITATION AGRICOLE SAYAH, Chlef, 10, 13T, orange
+NAOURASS IMPORT EXPORT, Guelma, 15, 10T, all
+NAOURASS IMPORT EXPORT, Guelma, 10, 15T, all
+NAOURASS IMPORT EXPORT, Guelma, 10, 20T, all
+ZAMMIT, Alger, 7, 10T, date
+EURL KAIBRA, Alger, 20, 15T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+EURL KAIBRA, Alger, 10, 20T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+SARL AZIZA INTERNATIONAL TRADING, Biskra, 5, 15T, date
+TASFIA AGRO-ALIMENTAIRES IMPORT-EXPORT, Relizane, 7, 20T, date
+SARL WAHRANE, Oran, 8, 20T, citrus & lemon & clementine & mandarine
+SARL GENALI, Alger, 7, 15T, wheat & potato & tomato
+AFRICA TRADE EXPORT, Alger, 11, 10T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+AFRICA TRADE EXPORT, Alger, 7, 15T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+SARL DAFIL, Alger, 7, 15T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+NC. EUROMED INTERNATIONAL (BVI) LIMITED, Biskra, 5, 20T, all
+SARL BIKA EXPORT, Alger, 7, 10T, all
+COMPAGNIE GÉNÉRALE AL DJAZAÏR, Setif, 10, 10T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+COMPAGNIE GÉNÉRALE AL DJAZAÏR, Setif, 7, 15T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+COMPAGNIE GÉNÉRALE AL DJAZAÏR, Setif, 5, 20T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+SAKORA GROUP, Bouira, 12, 15T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+SAKORA GROUP, Bouira, 8, 20T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+SARL BENBITALUX, Tipaza, 7, 25T, potato
+AGROBOER, Oran, 5, 20T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
+SNAB, Constantine, 8, 15T, wheat & potato & tomato & citrus & lemon & clementine & mandarine
