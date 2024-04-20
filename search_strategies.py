@@ -3,6 +3,39 @@ from ChainAndLogistics import Node
 import queue
 
 
+def find_optimal_company_solution(problem, companies, search_strategy):
+    """
+    Find the most optimal company location based on the given search strategy.
+
+    Args:
+    problem: The problem instance.
+    companies (dict): A dictionary containing information about companies and their locations.
+    search_strategy (str): The search strategy to use ("BFS", "UCS", "A*").
+
+    Returns:
+    tuple: A tuple containing the name of the company and the most optimal solution path.
+    """
+    #get only the wilayas
+    wilayas = list(companies.keys())
+    print("WILAYASSSSS:")
+    print(wilayas)
+    solution = None #the solution path 
+    #get the solution path based on the search strategy given
+    if search_strategy == "BFS":
+        solution = BFS_optimal_solution(problem, wilayas)
+    if search_strategy == "UCS":
+        solution = None #replace it by the function
+    if search_strategy == "A*":
+        solution = a_star_helper(problem, wilayas)
+    
+    #get the company name that will transport the product
+    if solution:
+        company_name = companies[solution[0]]["company"]
+    else:
+        print("No solution found!")
+    
+    return company_name, solution
+
 def breadth_first_search_helper(problem):
     frontier = queue.Queue()
     explored = []
@@ -22,16 +55,66 @@ def breadth_first_search_helper(problem):
 
 
 def breadth_first_search(problem, initial_states):
-    setSol = []
+    """
+    Performs breadth-first search (BFS) on the given problem starting from each city.
+
+    Args:
+    problem: The problem instance to solve using BFS.
+    initial_states (list): A list of cities to start the search from.
+
+    Returns:
+    dict: A dictionary containing the solutions found for each initial state, along with their lengths.
+          The keys are the initial states, and the values are dictionaries with "solution" and "length" lists.
+    """
+    setSol = {}
     for initial_state in initial_states:
-        print("initial state: ", initial_state)
+        setSol[initial_state] = {"solution": [], "length": 0}
         problem.state = initial_state  # update the initial state
-        node = breadth_first_search_helper(problem)
-        sol = problem.reconstruct_path(node)
-        if sol:  # if solution exists append it to the total solutions list
-            setSol.append(sol)
+        sol = breadth_first_search_helper(problem)
+        solution = problem.reconstruct_path(sol)
+        if solution:  # If a solution is found, append it to the total solutions list with its length
+            sol_length = len(solution)
+            setSol[initial_state]["solution"] = solution
+            setSol[initial_state]["length"] = sol_length
     return setSol
 
+def BFS_optimal_solution(problem, initial_states):# Function to retrieve the best solution path from the solutions found for multiple initial states.
+    setSol = breadth_first_search(problem, initial_states)
+    optimal_solution = setSol[initial_states[0]] #variable to store the best solution path
+    
+    # Compare the lengths of solutions found for each initial state to find the shortest solution
+    for initial_state in initial_states:
+        if setSol[initial_state]["length"] <= optimal_solution["length"] and setSol[initial_state]["length"] > 0:
+            # Update the optimal_solution variable to store the solution with the shortest length.
+            optimal_solution = setSol[initial_state]
+    #we keep only the path of the solution
+    optimal_solution = optimal_solution["solution"]
+    return optimal_solution
+
+def merge_bfs_searches(problem, source_cities, companies): #Function that returns the full path from the company location to the goal city + the company that transported the product
+    #Find the nearest source city
+    nearest_source_city = BFS_optimal_solution(problem, source_cities)
+    
+    #Make a new transport problem which its goal city is the found source city
+    company_problem = TransportProblem("", nearest_source_city[0], state_transition_model)
+    
+    #Find the shortest path between the nearest company to the source city
+    company_name, nearst_company_city = find_optimal_company_solution(company_problem, companies,"BFS")
+    
+    #Get the path from the company location to the source city  
+    company_to_source_problem = TransportProblem(nearst_company_city[0], nearest_source_city[0], state_transition_model)
+    path_from_company_to_source_city = breadth_first_search_helper(company_to_source_problem)
+    path_from_company_to_source_city = company_to_source_problem.reconstruct_path(path_from_company_to_source_city)
+    
+    #Get the path from the company location to the source city 
+    source_to_destination_problem = TransportProblem(nearest_source_city[0], problem.goal_state, state_transition_model)
+    path_from_source_city_to_destination = breadth_first_search_helper(source_to_destination_problem)
+    path_from_source_city_to_destination = source_to_destination_problem.reconstruct_path(path_from_source_city_to_destination)
+    
+    #Get the full path
+    full_path = path_from_company_to_source_city + path_from_source_city_to_destination
+    
+    return company_name, full_path
 
 # ucs starts here
 def ucs_helper(problem):
@@ -115,6 +198,39 @@ def UcsCompany(problem,initial_states,companies):
         return None, None, None ,None,None
 
     return best_company, min_cost_final, best_path ,min_initial_state,companies[best_company]['wilaya']
+#ucs finishes here
+
+# informed search functions start here
+def a_star_helper(problem, initial_states_product):
+    best_path = None
+    smallest_objective_value = float('inf')  # initialize it to the max value
+
+    for possible_initial_state in initial_states_product:
+        print("initial state: ", possible_initial_state)
+        frontier = queue.PriorityQueue()
+        explored = []
+        root = Node(possible_initial_state)
+        frontier.put((root.cost + problem.heuristic(root.state), root))
+
+        while frontier:
+            chosen_node = frontier.get()[1]
+            if problem.is_goal_test(chosen_node):
+                objective_value = chosen_node.cost + problem.heuristic(chosen_node.state)
+                if objective_value < smallest_objective_value:  # if this is the smallest heuristic then it is the best root to take hence the best path solution is found
+                    smallest_objective_value = objective_value
+                    explored.append(chosen_node)
+                    best_path = problem.reconstruct_path(chosen_node)  # Reconstruct the path
+                break
+
+            explored.append(chosen_node)
+            children = problem.expand_node(chosen_node)
+
+            for child in children:
+                if child not in explored and child.state not in [n[1].state for n in frontier.queue]:
+                    frontier.put((child.cost + problem.heuristic(child.state), child))
+
+    return best_path
+
 
 # informed search functions start here
 def a_star_helper(problem, initial_states_product):
@@ -182,20 +298,22 @@ with open('data/wilaya_frontiere.txt', 'r') as file:
             state_transition_model[city]["neighbors"][neighbor_city] = distance
 
 
-target_city = input("Enter the city you want to ship to: ")
-product = input("Enter product: ")
-quantity = input("Enter quantity in kg: ")
-month = input("Enter the month of the shipment: ")
-problemLogistic = TransportProblem("", target_city, state_transition_model)
-cities = problemLogistic.find_source_city(product, quantity, month)
-companies = problemLogistic.find_company(product, quantity)
+problemLogistic = TransportProblem("", "Ouargla", state_transition_model)
+cities = problemLogistic.find_source_city("date", "384000", "10")
+companies = problemLogistic.find_company("date", "384000")
+company_name, solution =  merge_bfs_searches(problemLogistic, cities, companies)
+print("COMPANY: ")
+print(company_name)
+print("SOLUTION: ")
+print(solution)
 
-best_company, min_cost, best_path ,min_initial_state,wilaya_company=UcsCompany(problemLogistic,cities,companies)
-print(f"source_city : {min_initial_state}")
-print(f"The best company is {best_company} in wilaya {wilaya_company}")
+# solution = a_star(problemLogistic, cities, companies)
+# print("solution:")
+# for e in solution:
+#     print(e)
+    #counter += e.cost
+#print(counter)
 
-print(f"The minimum cost is {min_cost}")
-print(f"path : {best_path}")
 # calling the functions and printing (will be changed with a menu eventually)
 # A star
 '''
@@ -219,6 +337,7 @@ else:
 
 print("------------------------------------"*4)
 '''
+
 '''
 # Uniform Cost Search
 solutions = ucs(problemLogistic, cities)
