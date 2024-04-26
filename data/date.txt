@@ -41,17 +41,17 @@ Khenchela, 0, none, none, none
 Souk Ahras, 60400000, 10, 11, 12
 Tipaza, 0, none, none, none
 Mila, 0, none, none, none
-In Defla, 0, none, none, none
+Ain Defla, 0, none, none, none
 Naama, 0, none, none, none
-In Temouchent, 0, none, none, none
+Ain Temouchent, 0, none, none, none
 Ghardaia, 0, none, none, none
 Relizane, 0, none, none, none
 Timimoun, 0, none, none
 Bordj Badji Mokhtar, 0, none, none
 Ouled Djellal, 0, none, none
 Beni Abbes, 0, none, none
-In Salah, 0, none, none
-In Guezzam, 0, none ,none
+Ain Salah, 0, none, none
+Ain Guezzam, 0, none ,none
 Touggourt, 0, none, none
 Djanet, 0, none, none
 El M'Ghair, 0, none, none
