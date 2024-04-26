@@ -104,6 +104,17 @@ def a_star(problem, initial_states_product, initial_states_company):
 
     return company_name, full_path
 
+def hill_climbing_solution(problem, initial_states_product, initial_states_company):
+
+    second_path = helper_function.hill_climbing(problem, initial_states_product)
+    print("path from source to dest: ", second_path)
+    company_problem = helper_function.TransportProblem("", second_path[0], state_transition_model)
+    company_name, first_path = helper_function.find_optimal_company_solution(company_problem, initial_states_company, "hill_climbing")
+    print("path from company to source: ", first_path)
+    full_path = first_path + second_path
+    full_path = list(dict.fromkeys(full_path))
+
+    return company_name, full_path
 
 '''
 target_city = input("Enter the city you want to ship to: ")
