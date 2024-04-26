@@ -41,9 +41,9 @@ Khenchela, 50500000, 5, 6, 7
 Souk Ahras, 94529000, 5, 6, 7
 Tipaza, 16454000, 5, 6, 7
 Mila, 138900000, 5, 6, 7
-In Defla, 84750000, 5, 6, 7
+Ain Defla, 84750000, 5, 6, 7
 Naama, 409200, 5, 6, 7
-In Temouchent, 31632500, 5, 6, 7
+Ain Temouchent, 31632500, 5, 6, 7
 Ghardaia, 11750000, 5, 6, 7
 Relizane, 75047600, 5, 6, 7
 Timimoun, 0, none, none
