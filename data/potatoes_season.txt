@@ -41,17 +41,17 @@ Khenchela, 2060000, 11, 12, 1
 Souk Ahras, 3942000, 11, 12, 1
 Tipaza, 17441900, 11, 12, 1
 Mila, 39705000, 11, 12, 1
-In Defla, 361490000, 11, 12, 1
+Ain Defla, 361490000, 11, 12, 1
 Naama, 4904000, 11, 12, 1
-In Temouchent, 4324500, 11, 12, 1
+Ain Temouchent, 4324500, 11, 12, 1
 Ghardaia, 0, 11, 12, 1
 Relizane, 35966000, 11, 12, 1
 Timimoun, 0, none, none
 Bordj Badji Mokhtar, 0, none, none
 Ouled Djellal, 0, none, none
 Beni Abbes, 0, none, none
-In Salah, 0, none, none
-In Guezzam, 0, none ,none
+Ain Salah, 0, none, none
+Ain Guezzam, 0, none ,none
 Touggourt, 0, none, none
 Djanet, 0, none, none
 El M'Ghair, 0, none, none
