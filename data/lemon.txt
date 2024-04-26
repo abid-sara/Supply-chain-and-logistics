@@ -36,7 +36,7 @@ Khenchela, 0, none, none
 Tissemsilt, 0, none, none
 Tindouf, 0, none, none
 El Bayadh, 0, none, none
-M'sila, 0, none, none
+M'Sila, 0, none, none
 Saida, 0, none, none
 Setif, 0, none, none
 Djelfa, 0, none, none
