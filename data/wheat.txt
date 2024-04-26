@@ -50,8 +50,8 @@ Timimoun, 0, none, none
 Bordj Badji Mokhtar, 0, none, none
 Ouled Djellal, 0, none, none
 Beni Abbes, 0, none, none
-In Salah, 0, none, none
-In Guezzam, 0, none ,none
+Ain Salah, 0, none, none
+Ain Guezzam, 0, none ,none
 Touggourt, 0, none, none
 Djanet, 0, none, none
 El M'Ghair, 0, none, none
