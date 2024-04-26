@@ -25,6 +25,8 @@ def find_optimal_company_solution(problem, companies, search_strategy):
         solution = None  # replace it by the function
     if search_strategy == "A*":
         solution = a_star_helper(problem, wilayas)
+    elif search_strategy == "hill_climbing":  
+        solution = hill_climbing(problem, wilayas)    
 
     # get the company name that will transport the product
     if solution:
@@ -33,7 +35,7 @@ def find_optimal_company_solution(problem, companies, search_strategy):
         print("No solution found!")
 
     return company_name, solution
-
+    
 
 def breadth_first_search_helper(problem):
     frontier = queue.Queue()
@@ -147,3 +149,42 @@ def a_star_helper(problem, initial_states_product):
                     frontier.put((child.cost + problem.heuristic(child.state), child))
 
     return best_path
+
+def hill_climbing_search(problem):
+    current_node = Node(problem.state)
+    best_path = None 
+    best_length = float('inf')  # Initialize the best length to infinity
+    while True: 
+        neighbors = problem.expand_node(current_node)
+        if not neighbors: 
+            best_path = problem.reconstruct_path(current_node)
+            best_length = len(best_path)
+            return best_path, best_length
+        best_neighbor = min(neighbors, key=lambda n: problem.heuristic(n.state)) 
+
+        if problem.heuristic(best_neighbor.state) >= problem.heuristic(current_node.state):
+            best_path = problem.reconstruct_path(current_node)
+            best_length = len(best_path)
+            return best_path, best_length
+        else:
+            current_node = best_neighbor
+        if problem.is_goal_test(current_node):
+            best_path = problem.reconstruct_path(current_node)
+            best_length = len(best_path)
+            return best_path, best_length
+    return [], 0  # Return an empty path and length 0 if no solution is found
+
+def hill_climbing(problem, initial_states):
+    setSolutions = {}
+    for initial_state in initial_states:
+        setSolutions[initial_state] = {"solution": [], "length": 0}
+        problem.state = initial_state  
+        solution, length = hill_climbing_search(problem)  # Modified to return both solution and length
+        setSolutions[initial_state]["solution"] = solution
+        setSolutions[initial_state]["length"] = length
+        
+    best_root = min(initial_states, key=lambda state: problem.heuristic(state))
+
+    optimal_solution = setSolutions[best_root]
+
+    return optimal_solution["solution"]
