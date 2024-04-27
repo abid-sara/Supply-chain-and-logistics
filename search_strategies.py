@@ -27,69 +27,32 @@ def merge_bfs_searches(problem, source_cities,
     return company_name, full_path
 
 
-def uniform_cost_search(problem, initial_states):
-    solutions = []
-    for initial_state in initial_states:
-        problem.state = initial_state
-        solution_node = helper_function.ucs_helper(problem)
-        if solution_node:
-            solution_path = []
-            node = solution_node
-            while node:
-                solution_path.insert(0, node)
-                node = node.parent
-            # solution_path.reverse()
-            solutions.append(solution_path)
-    return solutions
+#for ucs
+def merge_ucs_searches(problem, source_cities,
+                       companies):  
+    nearest_source_city,cost_problem_source = helper_function.UCS_optimal_solution(problem, source_cities)#path and cost from  source city to city of user
+    company_problem = helper_function.TransportProblem("", nearest_source_city[0], state_transition_model)#reset the goal
 
+    company_name, nearst_company_city,cost_company_source  = helper_function.find_optimal_company_solution(company_problem, companies, "UCS")#path and cost from company to source city
+    company_to_source_problem = helper_function.TransportProblem(nearst_company_city[0], nearest_source_city[0], state_transition_model)
+    path_from_company_to_source_city = helper_function.ucs_helper(company_to_source_problem)
+    cost1=path_from_company_to_source_city.cost
+    path_from_company_to_source_city = company_to_source_problem.reconstruct_path(path_from_company_to_source_city)
+    source_to_destination_problem = helper_function.TransportProblem(nearest_source_city[0], problem.goal_state, state_transition_model)
+    path_from_source_city_to_destination = helper_function.ucs_helper(source_to_destination_problem)
+    cost2=path_from_source_city_to_destination.cost
 
-def UcsCompany(problem, initial_states, companies):
-    setSol = uniform_cost_search(problem, initial_states)
-    min_cost1 = float('inf')
-    min_cost_final = float('inf')
-    min_path = None  # path from source city to user wilaya
-    best_company = None
-    best_path = None  # final path
-    min_initial_state = None  # goalstate of ucscompanyhelper
+    path_from_source_city_to_destination = source_to_destination_problem.reconstruct_path(
+        path_from_source_city_to_destination)
+    # Get the full path
+    full_path = path_from_company_to_source_city + path_from_source_city_to_destination
+    full_path = list(dict.fromkeys(full_path))  # remove the duplicated keys
+    min_cost_final=cost1+cost2
+    return company_name, full_path ,min_cost_final
 
-    for path1 in setSol:
-        cost1 = path1[-1].cost  # access the  last node (the goal) and get the path cosy
-
-        if cost1 < min_cost1:
-            min_cost1 = cost1
-            min_path = [node.state for node in path1]  # Convert the path to a list of states
-            # Since each (path, cost) corresponds to a specific initial_state in setSol,
-            # we don't need to track the initial_state here directly.
-            min_initial_state = min_path[0]  # Assuming path is not empty
-    # goal_state_of_company=min_initial_state#source_city
-    # initial_states_company=companies
-    setComp = []  # initial_states for ucs companies
-
-    setComp = [companies[company]['wilaya'] for company in companies]
-
-    problem.set_goal(min_initial_state)  # update the problem goal
-
-    setSolCompanies = uniform_cost_search(problem, setComp)
-
-    for company, path_company_source in zip(companies, setSolCompanies):
-        cost_company_source = path_company_source[
-            -1].cost  # Get the cost of the last node in the path(the goal so the cost of reaching the goal)
-        cost2 = min_cost1 + cost_company_source  # the total cost of transporting the product from the company to the wilaya of user
-
-        if cost2 < min_cost_final:
-            min_cost_final = cost2
-            best_company = company
-            best_path = [node.state for node in path_company_source[
-                                                :-1]] + min_path  # the final path of transporting the product from the company to the wilaya of user
-
-    if min_cost_final == float('inf'):
-        return None, None, None, None, None
-
-    return best_company, min_cost_final, best_path, min_initial_state, companies[best_company]['wilaya']
 
 
 # ucs finishes here
-
 def a_star(problem, initial_states_product, initial_states_company):
 
     #path from source to goal
@@ -138,15 +101,23 @@ with open('data/wilaya_frontiere.txt', 'r') as file:
             distance = float(distance_str)
             state_transition_model[city]["neighbors"][neighbor_city] = distance
 
-problemLogistic = helper_function.TransportProblem("", "Tizi Ouzou", state_transition_model)
-cities = problemLogistic.find_source_city("date", "384000", "10")
-companies = problemLogistic.find_company("date", "384000")
-company_name, solution = a_star(problemLogistic, cities, companies)
-                        #  merge_bfs_searches(problemLogistic, cities, companies)
-print("COMPANY: ", end="")
+problemLogistic = helper_function.TransportProblem("", "Adrar", state_transition_model)
+cities = problemLogistic.find_source_city("lemon", "384000", "12")
+companies = problemLogistic.find_company("lemon", "384000")
+company_name, full_path ,min_cost_final= merge_ucs_searches(problemLogistic, cities,companies)  
 print(company_name)
-print("SOLUTION: ", end="")
-print(solution)
+print(full_path)
+print(min_cost_final)
+company_name2, full_path2=hill_climbing_solution(problemLogistic, cities, companies)
+print(company_name2)
+print(full_path2)
+# companies = problemLogistic.find_company("date", "384000")
+# #company_name, solution = a_star(problemLogistic, cities, companies)
+#                         #  merge_bfs_searches(problemLogistic, cities, companies)
+# print("COMPANY: ", end="")
+# print(company_name)
+# print("SOLUTION: ", end="")
+# print(solution)
 
 
 '''
