@@ -22,7 +22,7 @@ def find_optimal_company_solution(problem, companies, search_strategy):
     if search_strategy == "BFS":
         solution = BFS_optimal_solution(problem, wilayas)
     if search_strategy == "UCS":
-        solution = None  # replace it by the function
+         solution,min_cost = UCS_optimal_solution(problem,wilayas)  # replace it by the function
     if search_strategy == "A*":
         solution = a_star_helper(problem, wilayas)
     elif search_strategy == "hill_climbing":  
@@ -33,7 +33,8 @@ def find_optimal_company_solution(problem, companies, search_strategy):
         company_name = companies[solution[0]]["company"]
     else:
         print("No solution found!")
-
+    if search_strategy == "UCS":
+        return company_name, solution,min_cost
     return company_name, solution
     
 
@@ -118,7 +119,34 @@ def ucs_helper(problem):
                     frontier.append((child.cost, child))  # child node have accumulated cost its cost + parent cost (see expand_node function)
 
     return None
-
+def uniform_cost_search(problem, initial_states):
+    solutions = []
+    for initial_state in initial_states:
+        problem.state = initial_state
+        solution_node = ucs_helper(problem)
+        if solution_node:
+            solution_path = []
+            node = solution_node
+            while node:
+                solution_path.insert(0, node)
+                node = node.parent
+            # solution_path.reverse()
+            solutions.append(solution_path)
+    return solutions
+def UCS_optimal_solution(problem,initial_states):
+    setSol = uniform_cost_search(problem, initial_states)
+    min_cost = float('inf')
+    min_path = None  # path from source city to user wilaya
+    for path in setSol:
+        cost = path[-1].cost  # access the  last node (the goal) and get the path cost
+        if cost < min_cost:
+            min_cost = cost
+            min_path = [node.state for node in path]  # Convert the path to a list of states
+            # Since each (path, cost) corresponds to a specific initial_state in setSol,
+            # we don't need to track the initial_state here directly.
+           # min_initial_state = min_path[0]  # Assuming path is not empty
+    return min_path,min_cost
+    
 
 # informed search functions start here
 def a_star_helper(problem, initial_states_product):
