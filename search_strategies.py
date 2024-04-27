@@ -1,4 +1,5 @@
 import helper_function
+import folium
 
 
 def merge_bfs_searches(problem, source_cities,
@@ -120,18 +121,68 @@ print(full_path2)
 # print(solution)
 
 
-'''
-# Uniform Cost Search
-solutions = ucs(problemLogistic, cities)
+# Coordinates of the center of Algeria 
+map_center = [28.0339, 1.6596]
 
-if solutions:
-    for i, solution in enumerate(solutions):
-        print(f"\nSolution starting from city: {cities[i]}")
-        for item in solution[0]:
-            print(item[0])
-        print("cost: ", round(solution[1], 2))
-else:
-    print("No solution found for any of the initial states.")
+# Create a map centered around Algeria
+m = folium.Map(location=map_center, zoom_start=5)
 
-print("------------------------------------"*4)
-'''
+# get the coordinates of the source cities
+coordinates_source_city = []
+for city in cities:
+    city_coordinates = state_transition_model[city]["coordinates"]
+    coordinates_source_city.append(city_coordinates)
+
+# get the coordinates of the truck cities
+coordinates_transportation_cities = []
+for city in list(companies.keys()):
+    city_coordinates = state_transition_model[city]["coordinates"]
+    coordinates_transportation_cities.append(city_coordinates)
+
+# goal_city =target_city  !!!!!!!!!!!!!will use this afterwards!!!!!!!!!!!!!!!!!!!!!
+goal_city = state_transition_model["Ouargla"]["coordinates"]
+
+# Add markers for source cities
+for coord in coordinates_source_city:
+    folium.Marker(
+        location=[coord[0], coord[1]],
+        popup='Source City',
+        icon=folium.Icon(color='blue', icon='box', prefix='fa')
+    ).add_to(m)
+
+# Add markers for truck cities
+for coord in coordinates_transportation_cities:
+    folium.Marker(
+        location=[coord[0], coord[1]],
+        popup='Truck City',
+        icon=folium.Icon(color='green', icon='truck', prefix='fa')
+    ).add_to(m)
+
+# Add a marker for the goal city
+folium.Marker(
+    location=[goal_city[0], goal_city[1]],
+    popup='Goal City',
+    icon=folium.Icon(color='red', icon='flag')
+).add_to(m)
+
+# path coordinates
+path = []
+for city in solution:
+    coordinates = state_transition_model[city]["coordinates"]
+    if city is not solution[len(solution)-1] and city is not solution[0]:  # add points as marker
+        folium.CircleMarker(
+            location=[coordinates[0], coordinates[1]],
+            radius=4,
+            popup="passed by",
+            color='black',
+            fill=True,
+            fill_color='black'
+        ).add_to(m)
+    path.append(coordinates)
+
+# Add lines for the path
+folium.PolyLine(path, color='blue').add_to(m)
+
+# Save to an HTML file
+m.save('map.html')
+
