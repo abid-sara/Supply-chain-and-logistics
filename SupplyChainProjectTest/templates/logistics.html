@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logistics and Transportation Optimization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <style>
+      /* Additional styles can be added here */
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: "Nunito", sans-serif;
+        background-image: url("static/img/imgonline-com-ua-ReplaceColor-wycKNuBgIX325adJ.jpg");
+        background-size: cover;
+        background-position: 0%;
+        display: flex;
+        align-items: center;
+      }
+      .header {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .title {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.5);
+      }
+      .description {
+        font-size: 1.2rem;
+        max-width: 60%;
+        margin: 0 auto;
+        background: rgba(50, 50, 50, 0.7);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        border-radius: 16px;
+      }
+      .credit {
+        font-size: 0.9rem;
+        margin-top: 10px;
+        color: #000;
+      }
+      .search-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #94a874;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-button:hover {
+        background-color: #deac80;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="sub-container">
+        <div class="title text-4xl font-bold">
+          <h1>Optimizing Logistics and Transportation</h1>
+        </div>
+        <div class="description">
+          <p>
+            This project focuses on enhancing logistics and transportation
+            efficiency to minimize delivery time, reduce costs, and ensure
+            timely availability of goods.
+          </p>
+          <p>
+            We will specifically address the challenges in Algeria, considering
+            the map of the country and recent agricultural production cycles
+            (e.g., wheat, potatoes, dates, tomatoes, citrus) to optimize
+            transportation routes.
+          </p>
+          <p>Our objectives include:</p>
+          <ul style="text-align: left">
+            <li>
+              Mapping out trucking capacities and available fleets between
+              cities.
+            </li>
+            <li>
+              Defining an optimization function considering distance,
+              seasonality, and truck capacities.
+            </li>
+            <li>
+              Implementing search strategies such as A*, BFS, UCS, and Hill
+              Climbing to evaluate optimal delivery schedules.
+            </li>
+            <li>
+              Comparative analyses to suggest the best fleet assignments for
+              transporting various products according to seasonal demands.
+            </li>
+          </ul>
+          <a href="/search" class="search-button">Go to Search Page</a>
+        </div>
+      </div>
+      <div class="credit">
+        Developed by: EDDALIA Wissal, ZANOUN Nada, ABID Sara, BOUCHEKHLAL
+        Sabrina
+        <br />
+        Under the supervision of Professor GUESSOUM Ahmed
+      </div>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>Logistics Search</title>
+    <style>
+      body {
+        font-family: "Nunito", sans-serif;
+        position: relative;
+        height: 100vh;
+        background-image: url("static/img/imgonline-com-ua-ReplaceColor-0zro4PYOTXZ.jpg");
+        background-size: cover;
+        background-position: center bottom 30%;
+        backdrop-filter: blur(5px);
+        -moz-filter: blur(10px); /* For compatibility with older browsers */
+        margin: 0;
+        padding: 20px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        max-width: 600px;
+        max-height: 1080px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        text-align: center;
+        color: #94a874;
+        font-weight: 800;
+      }
+      label {
+        font-weight: bold;
+        color: #333333;
+        margin-top: 20px;
+      }
+
+      form {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      select,
+      input,
+      button {
+        font-family: "Nunito", sans-serif;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+      select:focus,
+      input:focus {
+        border: 2px solid #b5c18e;
+      }
+      select[multiple] {
+        height: 120px;
+        font-weight: 600;
+      }
+      #quantity {
+        width: 95%;
+      }
+      button {
+        font-family: "Nunito", sans-serif;
+        background-color: #94a874;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #b5c18e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Logistics Search</h1>
+
+      <form action="/search" method="POST">
+        <div class="field">
+          <label for="strategy">Choose a Strategy:</label>
+          <select id="strategy" name="strategy">
+            <option value="A*">A*</option>
+            <option value="BFS">Breadth-First Search (BFS)</option>
+            <option value="UCS">Uniform Cost Search (UCS)</option>
+            <option value="HillClimbing">Hill Climbing</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="wilaya">Choose a Wilaya (Province) of Algeria:</label>
+          <select id="wilaya" name="wilaya">
+            <option value="Adrar">Adrar</option>
+            <option value="Chlef">Chlef</option>
+            <option value="Laghouat">Laghouat</option>
+            <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+            <option value="Batna">Batna</option>
+            <option value="Bejaia">Bejaia</option>
+            <option value="Biskra">Biskra</option>
+            <option value="Bechar">Bechar</option>
+            <option value="Blida">Blida</option>
+            <option value="Bouira">Bouira</option>
+            <option value="Tamanrasset">Tamanrasset</option>
+            <option value="Tebessa">Tebessa</option>
+            <option value="Tlemcen">Tlemcen</option>
+            <option value="Tiaret">Tiaret</option>
+            <option value="Tizi Ouzou">Tizi Ouzou</option>
+            <option value="Alger">Alger</option>
+            <option value="Djelfa">Djelfa</option>
+            <option value="Jijel">Jijel</option>
+            <option value="Setif">Setif</option>
+            <option value="Saida">Saida</option>
+            <option value="Skikda">Skikda</option>
+            <option value="Sidi Bel Abbes">Sidi Bel Abbes</option>
+            <option value="Annaba">Annaba</option>
+            <option value="Guelma">Guelma</option>
+            <option value="Constantine">Constantine</option>
+            <option value="Medea">Medea</option>
+            <option value="Mostaganem">Mostaganem</option>
+            <option value="M'Sila">M'Sila</option>
+            <option value="Mascara">Mascara</option>
+            <option value="Ouargla">Ouargla</option>
+            <option value="Oran">Oran</option>
+            <option value="El Bayadh">El Bayadh</option>
+            <option value="Illizi">Illizi</option>
+            <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+            <option value="Boumerdes">Boumerdes</option>
+            <option value="El Tarf">El Tarf</option>
+            <option value="Tindouf">Tindouf</option>
+            <option value="Tissemsilt">Tissemsilt</option>
+            <option value="El Oued">El Oued</option>
+            <option value="Khenchela">Khenchela</option>
+            <option value="Souk Ahras">Souk Ahras</option>
+            <option value="Tipaza">Tipaza</option>
+            <option value="Mila">Mila</option>
+            <option value="Ain Defla">Ain Defla</option>
+            <option value="Naama">Naama</option>
+            <option value="Ain Temouchent">Ain Temouchent</option>
+            <option value="Ghardaia">Ghardaia</option>
+            <option value="Relizane">Relizane</option>
+            <option value="El M'Ghair">El M'Ghair</option>
+            <option value="El Meniaa">El Meniaa</option>
+            <option value="Ouled Djellal">Ouled Djellal</option>
+            <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+            <option value="Beni Abbes">Beni Abbes</option>
+            <option value="Timimoun">Timimoun</option>
+            <option value="Touggourt">Touggourt</option>
+            <option value="Djanet">Djanet</option>
+            <option value="Ain Salah">Ain Salah</option>
+            <option value="Ain Guezzam">Ain Guezzam</option>
+          </select>
+        </div>
+
+       
+        <div class="field">
+          <label for="products">Choose Products:</label>
+          <select id="products" name="products" >
+            <option value="clementine">Clementine</option>
+            <option value="date">Date</option>
+            <option value="lemon">Lemon</option>
+            <option value="mandarine">Mandarine</option>
+            <option value="orange">Orange</option>
+            <option value="pomelo">Pomelo</option>
+            <option value="potato">Potato</option>
+            <option value="tomato">Tomato</option>
+            <option value="wheat">Wheat</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="quantity">Enter Quantity (in KG):</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            placeholder="Enter quantity"
+            min="1"
+            value="1"
+          />
+        </div>
+        <div class="field">
+          <label for="month">Specify The Month For Transportation: </label>
+          <select id="month" name="month">
+          </select>
+        </div>
+        <!-- Use JavaScript to redirect to map.html with selected parameters -->
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <script>
+      
+      // Call handleBackButtonClick function when the page loads
+      window.onload = function () {
+        handleBackButtonClick();
+      };
+     // Define the month data for each product
+     const monthData = {
+    'lemon': [11, 12, 1, 2, 3],
+    'clementine': [11, 12, 1, 2, 3],
+    'mandarine': [11, 12, 1, 2, 3],
+    'orange': [11, 12, 1, 2, 3],
+    'pomelo': [11, 12, 1, 2, 3],
+    'date': [10, 11, 12],
+    'potato': [3, 4, 5, 6, 7, 8, 10, 11, 12, 1],
+    'tomato': [4, 5, 6, 7, 8],
+    'wheat': [5, 6, 7]
+  };
+
+  const productsDropdown = document.getElementById('products');
+  const monthDropdown = document.getElementById('month');
+
+  
+  // Function to update the month dropdown based on selected product
+  function updateMonthDropdown() {
+    const selectedProduct = productsDropdown.value;
+    const months = monthData[selectedProduct];
+    
+    // Clear existing options
+    monthDropdown.innerHTML = '';
+
+    // Add new options
+    months.forEach(month => {
+      const option = document.createElement('option');
+      option.text = month;
+      option.value = month;
+      monthDropdown.add(option);
+    });
+  }
+
+  // Event listener for product selection change
+  productsDropdown.addEventListener('change', updateMonthDropdown);
+
+  // Initial update when the page loads
+  updateMonthDropdown();
+
+    </script>
+  </body>
+</html>
