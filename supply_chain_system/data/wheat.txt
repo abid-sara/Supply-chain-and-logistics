@@ -1,0 +1,58 @@
+Adrar, 7223100, 5, 6, 7
+Chlef, 90874600, 5, 6, 7
+Laghouat, 9087700, 5, 6, 7
+Oum El Bouaghi, 93000000, 5, 6, 7
+Batna, 53036900, 5, 6, 7
+Bejaia, 6487200, 5, 6, 7
+Biskra, 39471800, 5, 6, 7
+Bechar, 654300, 5, 6, 7
+Blida, 11005500, 5, 6, 7
+Bouira, 85017800, 5, 6, 7
+Tamanrasset, 654600, 5, 6, 7
+Tebessa, 41117500, 5, 6, 7
+Tlemcen, 45477500, 5, 6, 7
+Tiaret, 122975000, 5, 6, 7
+Tizi Ouzou, 6836300, 5, 6, 7
+Alger, 2471300, 5, 6, 7
+Djelfa, 8350000, 5, 6, 7
+Jijel, 1796900, 5, 6, 7
+Setif, 129991700, 5, 6, 7
+Saida, 28438500, 5, 6, 7
+Skikda, 36530000, 5, 6, 7
+Sidi Bel Abbes, 37475000, 5, 6, 7
+Annaba, 21045500, 5, 6, 7
+Guelma, 127094500, 5, 6, 7
+Constantine, 119659900, 5, 6, 7
+Medea, 72574000, 5, 6, 7
+Mostaganem, 17103800, 5, 6, 7
+M'Sila, 13052500, 5, 6, 7
+Mascara, 25602500, 5, 6, 7
+Ouargla, 4325800, 5, 6, 7
+Oran, 1907500, 5, 6, 7
+El Bayadh, 4088300, 5, 6, 7
+Illizi, 46300, 5, 6, 7
+Bordj Bou Arreridj, 44131100, 5, 6, 7
+Boumerdes, 5284500, 5, 6, 7
+El Tarf, 27531300, 5, 6, 7
+Tindouf, 0, none, none
+Tissemsilt, 52657400, 5, 6, 7
+El Oued, 13032000, 5, 6, 7
+Khenchela, 50500000, 5, 6, 7
+Souk Ahras, 94529000, 5, 6, 7
+Tipaza, 16454000, 5, 6, 7
+Mila, 138900000, 5, 6, 7
+Ain Defla, 84750000, 5, 6, 7
+Naama, 409200, 5, 6, 7
+Ain Temouchent, 31632500, 5, 6, 7
+Ghardaia, 11750000, 5, 6, 7
+Relizane, 75047600, 5, 6, 7
+Timimoun, 0, none, none
+Bordj Badji Mokhtar, 0, none, none
+Ouled Djellal, 0, none, none
+Beni Abbes, 0, none, none
+Ain Salah, 0, none, none
+Ain Guezzam, 0, none ,none
+Touggourt, 0, none, none
+Djanet, 0, none, none
+El M'Ghair, 0, none, none
+El Meniaa, 0, none, none
